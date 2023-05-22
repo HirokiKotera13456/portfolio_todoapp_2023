@@ -1,15 +1,13 @@
 
-import { type Todo, add, toggleHideCompleted } from '../features/todo/todoSlice';
+import { type Todo, add } from '../features/todo/todoSlice';
 import { v4 as uuidv4 } from 'uuid';
-import { Button, TextField } from '@mui/material';
-import { useDispatch, useSelector } from 'react-redux';
+import { Button, Divider, InputBase, Paper } from '@mui/material';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
-import { type RootState } from '../app/store';
 
-export const Form = (): any => {
+export const Form = (): JSX.Element => {
 
   const dispatch = useDispatch();
-  const hideCompleted = useSelector((state: RootState) => state.todos.hideCompleted)
   const ID = uuidv4();
 
   const addTodo = (content: string): void => {
@@ -24,23 +22,27 @@ export const Form = (): any => {
   }
   const [content, setContent] = useState("");
 
-  const handleButton = (): void => {
-    dispatch(toggleHideCompleted())
-  }
+
 
   return (
     <>
-      <form>
-        <TextField label="todoを入力してください"
+      <Paper
+        component="form"
+        sx={{ p: '4px 4px', display: 'flex', alignItems: 'center', width: "100%" }}
+      >
+        <InputBase
+          multiline
+          sx={{ ml: 1, flex: 1 }}
+          placeholder="タスクを入力"
+          inputProps={{ 'aria-label': 'タスクを入力' }}
           value={content}
-          onChange={e => { setContent(e.target.value); }} >
-        </TextField>
-        <Button variant="contained" onClick={() => { addTodo(content) }} style={{ marginLeft: '25px', marginTop: '5px' }}>送信</Button>
-      </form>
-      <Button variant="contained" onClick={handleButton}
-        style={{ marginTop: "15px" }}
-      >{hideCompleted ? "完了リストを表示する" : "完了リストを非表示にする"}
-      </Button>
+          onChange={e => { setContent(e.target.value); }}
+        />
+        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+        <Button onClick={() => { addTodo(content) }}>送信</Button>
+        <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
+
+      </Paper>
     </>
   )
 }

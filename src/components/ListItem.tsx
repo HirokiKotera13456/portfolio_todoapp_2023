@@ -1,4 +1,4 @@
-import { Button } from '@mui/material';
+import { Button, Checkbox } from '@mui/material';
 import React from 'react'
 import { type Todo, remove, toggleCompleteTask } from '../features/todo/todoSlice';
 import { useAppDispatch } from '../app/store';
@@ -18,18 +18,17 @@ export const ListItem: React.FunctionComponent<Props> = (props) => {
 
     return (
         <div key={id}>
-            <h3>{todo.isCompleted ? "完了" : "未完了"}</h3>
-            <div>
-                <input
-                    type="checkbox"
+            <div style={{ marginTop: "4%" }}>
+                <Checkbox
                     onClick={() => {
                         dispatch(toggleCompleteTask(todo));
                     }}
-                    defaultChecked={isCompleted} />
+                    defaultChecked={isCompleted}
+                />
+                <span>{content}</span>
             </div>
-            <div>内容: {content}</div>
-            <Button variant="contained" style={{ marginTop: "10px", marginRight: "10px" }} onClick={() => { removeTodo(id); }}>削除</Button>
-            <Button variant="contained" style={{ marginTop: "10px" }} onClick={() => { handleEditButtonPushed(id, content); }}>編集</Button>
+            <Button variant="outlined" onClick={() => { handleEditButtonPushed(id, content); }}>編集</Button>
+            <Button variant="outlined" style={{ marginLeft: "2%",  }} color="error" onClick={() => { removeTodo(id); }}>削除</Button>
         </div>
     )
 }
