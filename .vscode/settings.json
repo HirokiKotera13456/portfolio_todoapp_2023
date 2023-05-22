@@ -1,3 +1,7 @@
 {
-  "cSpell.words": ["reduxjs", "todos"]
+  "cSpell.words": ["reduxjs", "todos"],
+    "editor.codeActionsOnSave": [
+    "source.addMissingImports",
+    "source.fixAll.eslint"
+  ]
 }

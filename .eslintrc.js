@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: [ 'standard-with-typescript','prettier'],
+  extends: ['standard-with-typescript', 'prettier'],
   overrides: [],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -14,5 +14,9 @@ module.exports = {
   rules: {
     'react/jsx-uses-react': 'off',
     'react/react-in-jsx-scope': 'off',
+  },
+  plugins: ['unused-imports'],
+  rules: {
+    'unused-imports/no-unused-imports': 'error',
   },
 }
