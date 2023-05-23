@@ -77,7 +77,7 @@ export const List: React.FunctionComponent = () => {
         }}
       />
       <div></div>
-      <Button variant="outlined" onClick={handleButton} sx={{ marginTop: "2%" }} size="small">
+      <Button variant="outlined" onClick={handleButton} sx={{ marginTop: "2%", borderRadius: "50px" }} size="small">
         {hideCompleted ? <p style={{ color: "#AAAAAA" }}>☑を表示する</p> : <p style={{ color: "#555555" }}>☑を非表示にする</p>}
       </Button>
       {

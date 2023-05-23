@@ -27,8 +27,8 @@ export const ListItem: React.FunctionComponent<Props> = (props) => {
                 />
                 <span>{content}</span>
             </div>
-            <Button variant="outlined" onClick={() => { handleEditButtonPushed(id, content); }}>編集</Button>
-            <Button variant="outlined" style={{ marginLeft: "2%",  }} color="error" onClick={() => { removeTodo(id); }}>削除</Button>
+            <Button variant="outlined" style={{  borderRadius: "30px" }} onClick={() => { handleEditButtonPushed(id, content); }}>編集</Button>
+            <Button variant="outlined" style={{ marginLeft: "2%", borderRadius: "30px" }} color="error" onClick={() => { removeTodo(id); }}>削除</Button>
         </div>
     )
 }
