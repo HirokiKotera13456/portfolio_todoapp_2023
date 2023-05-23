@@ -41,7 +41,6 @@ export const Form = (): JSX.Element => {
         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
         <Button onClick={() => { addTodo(content) }}>送信</Button>
         <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" />
-
       </Paper>
     </>
   )
