@@ -28,11 +28,11 @@ export const Form = (): JSX.Element => {
     <>
       <Paper
         component="form"
-        sx={{ p: '4px 4px', display: 'flex', alignItems: 'center', width: "100%" }}
+        sx={{ p: '4px 4px', display: 'flex', alignItems: 'center', width: "50%" }}
       >
         <InputBase
           multiline
-          sx={{ ml: 1, flex: 1 }}
+          sx={{ ml: 1, flex: 1 ,}}
           placeholder="タスクを入力"
           inputProps={{ 'aria-label': 'タスクを入力' }}
           value={content}
