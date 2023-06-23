@@ -1,5 +1,6 @@
 {
   "cSpell.words": ["reduxjs", "todos"],
+  "eslint.workingDirectories": ["./app/next-js"],
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.codeActionsOnSave": [
